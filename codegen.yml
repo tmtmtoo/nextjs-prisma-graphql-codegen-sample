@@ -16,5 +16,14 @@ generates:
       mappers:
         User: '@prisma/client#User'
         Todo: '@prisma/client#Todo'
-      scalers:
+      scalars:
         DateTime: string
+  src/generated/request.ts:
+    schema:
+      - 'src/graphql/typeDefs/**/*.graphql'
+    documents:
+      - 'src/graphql/typeDefs/**/*.graphql'
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
