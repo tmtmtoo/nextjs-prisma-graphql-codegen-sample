@@ -12,7 +12,7 @@ generates:
       - typescript-resolvers
     config:
       contextType: 'src/graphql/context#Context'
-      mapperTileSuffix: Model
+      mapperTypeSuffix: Model
       mappers:
         User: '@prisma/client#User'
         Todo: '@prisma/client#Todo'

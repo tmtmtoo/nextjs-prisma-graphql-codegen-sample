@@ -1,5 +1,5 @@
 import { GraphQLResolveInfo, GraphQLScalarType, GraphQLScalarTypeConfig } from 'graphql';
-import { User, Todo } from '@prisma/client';
+import { User as UserModel, Todo as TodoModel } from '@prisma/client';
 import { Context } from 'src/graphql/context';
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
@@ -139,8 +139,8 @@ export type ResolversTypes = {
   Mutation: ResolverTypeWrapper<{}>;
   Query: ResolverTypeWrapper<{}>;
   String: ResolverTypeWrapper<Scalars['String']>;
-  Todo: ResolverTypeWrapper<Todo>;
-  User: ResolverTypeWrapper<User>;
+  Todo: ResolverTypeWrapper<TodoModel>;
+  User: ResolverTypeWrapper<UserModel>;
 };
 
 /** Mapping between all available schema types and the resolvers parents */
@@ -151,8 +151,8 @@ export type ResolversParentTypes = {
   Mutation: {};
   Query: {};
   String: Scalars['String'];
-  Todo: Todo;
-  User: User;
+  Todo: TodoModel;
+  User: UserModel;
 };
 
 export interface DateTimeScalarConfig extends GraphQLScalarTypeConfig<ResolversTypes['DateTime'], any> {
