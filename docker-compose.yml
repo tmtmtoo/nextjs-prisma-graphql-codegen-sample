@@ -10,6 +10,14 @@ services:
       - POSTGRES_USER=user
       - POSTGRES_PASSWORD=password
       - POSTGRES_DB=nextjs-prisma-graphql-codegen-sample
+  prisma-migrate:
+    build:
+      context: prisma
+      dockerfile: Dockerfile
+    environment:
+      - DATABASE_URL=postgresql://user:password@db:5432/nextjs-prisma-graphql-codegen-sample?schema=public
+    depends_on:
+      - db
   mailhog:
     image: mailhog/mailhog
     ports:
